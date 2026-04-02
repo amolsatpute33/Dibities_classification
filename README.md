@@ -1,103 +1,48 @@
-🩺 Diabetes Prediction using Decision Tree Classifier
-
-Project Type: Classification
-Algorithm: Decision Tree
-Language: Python
-Dataset: diabetes.csv
-Libraries: pandas, scikit-learn, seaborn, matplotlib
-
-⸻
+Diabetes Prediction using Decision Tree Classifier
+Project Type: Classification | Algorithm: Decision Tree | Language: Python Dataset: diabetes.csv Toolkits: pandas, scikit-learn ,seaborn, matplotlib
 
 💡 Problem Statement
+Predict whether a person is diabetic based on medical attributes like glucose level, blood pressure, BMI, and age using a decision tree classifier.
 
-Predict whether a person is diabetic or non-diabetic based on medical attributes such as:
-	•	Glucose Level
-	•	Blood Pressure
-	•	BMI
-	•	Insulin
-	•	Age
-	•	Pregnancies
-	•	Skin Thickness
-	•	Diabetes Pedigree Function
-
-⸻
-
-📊 Dataset Overview
-	•	Rows: 768
-	•	Columns: 9
-	•	Features: 8
-	•	Target: Outcome (0 = Non-Diabetic, 1 = Diabetic)
-
-⸻
+Dataset Overview:
+There are 8 features and one target variable in dataset,involving 768 rows × 9 columns.
 
 🧠 Domain Analysis
+This project lies in the domain of healthcare analytics, targeting early detection of diabetes through clinical and demographic features. It leverages decision tree modeling to classify patients as diabetic or non-diabetic based on measurable parameters.
 
-This project falls under Healthcare Analytics.
-The goal is early detection of diabetes using machine learning.
-
-Decision Tree Classifier is used to:
-	•	Learn patterns from medical data
-	•	Classify diabetic vs non-diabetic patients
-	•	Improve prediction accuracy
-
-⸻
-
-🔍 Exploratory Data Analysis (EDA)
-
-📈 Histograms
-	•	Checked distribution of numerical features
-	•	Identified skewed columns
-
-📊 Countplot
-	•	Checked class imbalance in target variable
-
-📦 Boxplots
-	•	Detected outliers
-	•	Compared feature spread
-
-🔗 Scatter Plots
-	•	Analyzed relationship between features
-
-⸻
-
+🔍 Exploratory Data Analysis
+Histograms: Visualized the distribution of continuous variables to understand skewness, central tendency, and spread.
+Countplots: Examined target variable balance or not.
+Boxplots: Used boxplots to visually detect outliers and compare distributions across survival status.
+Scatter Plots: Explored relationships between pairs of variables .
 🧼 Data Preprocessing
+Replaced biologically invalid zeroes with median values. Handled outliers using IQR and replaced with median. Applied logarithmic transformation to skewed columns. Scaled features using MinMaxScaler.
 
-✔ Replaced invalid zero values with median
-✔ Handled outliers using IQR method
-✔ Applied log transformation
-✔ Feature scaling using MinMaxScaler
-✔ Balanced data using SMOTE
+⚙️ Modeling Building
+Model Used: DecisionTreeClassifier Sampling: Applied SMOTE to balance the class distribution. Train-Test Split: 80–20 ratio Evaluation Metrics: Accuracy,Confusion Matrix, Classification Report
 
-⸻
+Model Evaluation :
+The training accurasy of model is 72% and testing accurasy is 1%.i.e.model is overfitting.so we have done hyperparameter tuning to increase the performance of model.
 
-⚙️ Model Building
+Hyperparameter tuning:
+Doing bY using two ways
 
-Model Used: DecisionTreeClassifier
+Grid search cv
+Random search cv
+After hyperparameter tuning the training accurasy of model is 74% & the testing accurasy of model is 81%.
 
-Train-Test Split: 80% Train — 20% Test
+🏆 Model Performance
+Model Training Accuracy Testing Accuracy
 
-Evaluation Metrics:
-	•	Accuracy
-	•	Confusion Matrix
-	•	Classification Report
+Decision Tree : 100% : 71.4%
 
-⸻
+GridSearchCV Tuned Model :84.2% : 72.1%
 
-📉 Initial Model Performance
+RandomizedSearchCV Tuned : 84.2% : 72.7%
 
-Training Accuracy: 72%
-Testing Accuracy: 1%
+Cost Complexity Pruning : 77.0% : 77.2%
 
-⚠️ Model was overfitting
+	
 
-⸻
 
-🔧 Hyperparameter Tuning
 
-Applied:
-
-✅ GridSearchCV
-
-✅ RandomizedSearchCV
-
-✅ Cost Complexity Pruning
