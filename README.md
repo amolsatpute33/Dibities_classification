@@ -1,29 +1,179 @@
-Diabetes Prediction using Decision Tree Classifier Project Type: Classification | Algorithm: Decision Tree | Language: Python Dataset: diabetes.csv Toolkits: pandas, scikit-learn ,seaborn, matplotlib 🔗 Live App: https://dibitiesclassification-rkxhhaufqpw4t46iyzunc6.streamlit.app/
+# 🩺 Diabetes Prediction using Decision Tree Classifier
 
-💡 Problem Statement Predict whether a person is diabetic based on medical attributes like glucose level, blood pressure, BMI, and age using a decision tree classifier.
+![Python](https://img.shields.io/badge/Python-3.9-blue?logo=python)
+![ML](https://img.shields.io/badge/Machine%20Learning-Scikit--Learn-orange)
+![Status](https://img.shields.io/badge/Project-Completed-brightgreen)
 
-Dataset Overview: There are 8 features and one target variable in dataset,involving 768 rows × 9 columns.
+---
 
-🧠 Domain Analysis This project lies in the domain of healthcare analytics, targeting early detection of diabetes through clinical and demographic features. It leverages decision tree modeling to classify patients as diabetic or non-diabetic based on measurable parameters.
+## 📌 Project Overview
 
-🔍 Exploratory Data Analysis Histograms: Visualized the distribution of continuous variables to understand skewness, central tendency, and spread. Countplots: Examined target variable balance or not. Boxplots: Used boxplots to visually detect outliers and compare distributions across survival status. Scatter Plots: Explored relationships between pairs of variables . 🧼 Data Preprocessing Replaced biologically invalid zeroes with median values. Handled outliers using IQR and replaced with median. Applied logarithmic transformation to skewed columns. Scaled features using MinMaxScaler.
+This project predicts whether a person is diabetic or not using a **Decision Tree Classifier** based on medical attributes such as glucose level, blood pressure, BMI, and age.
 
-⚙️ Modeling Building Model Used: DecisionTreeClassifier Sampling: Applied SMOTE to balance the class distribution. Train-Test Split: 80–20 ratio Evaluation Metrics: Accuracy,Confusion Matrix, Classification Report
+---
 
-Model Evaluation : The training accurasy of model is 72% and testing accurasy is 1%.i.e.model is overfitting.so we have done hyperparameter tuning to increase the performance of model.
+## 💡 Problem Statement
 
-Hyperparameter tuning: Doing bY using two ways
+The goal of this project is to build a machine learning model that can **predict diabetes early** using patient health data.
 
-1.Grid search cv 2.Random search cv After hyperparameter tuning the training accurasy of model is 74% & the testing accurasy of model is 81%.
+---
 
-🏆 Model Performance Model Training Accuracy Testing Accuracy
+## 📊 Dataset Information
 
-Decision Tree : 100% : 71.4%
+* 📁 Dataset: `diabetes.csv`
+* 📏 Shape: **768 rows × 9 columns**
+* 🎯 Target Variable: `Outcome` (0 = Non-Diabetic, 1 = Diabetic)
+* 🔢 Features:
 
-GridSearchCV Tuned Model :84.2% : 72.1%
+  * Pregnancies
+  * Glucose
+  * Blood Pressure
+  * Skin Thickness
+  * Insulin
+  * BMI
+  * Diabetes Pedigree Function
+  * Age
 
-RandomizedSearchCV Tuned : 84.2% : 72.7%
+---
 
-Cost Complexity Pruning : 77.0% : 77.2%  make this readme
+## 🧠 Domain Analysis
 
+This project falls under **Healthcare Analytics**, focusing on early detection of diabetes using clinical data and predictive modeling techniques.
 
+---
+
+## 🔍 Exploratory Data Analysis (EDA)
+
+* 📉 **Histograms** → Distribution of features
+* 📊 **Countplots** → Class balance
+* 📦 **Boxplots** → Outlier detection
+* 🔗 **Scatter Plots** → Feature relationships
+
+---
+
+## 🧼 Data Preprocessing
+
+* Replaced invalid zero values with median
+* Handled outliers using IQR method
+* Applied log transformation for skewed features
+* Feature scaling using **MinMaxScaler**
+
+---
+
+## ⚙️ Model Building
+
+* 🤖 Algorithm: **Decision Tree Classifier**
+* ⚖️ Handling Imbalance: **SMOTE**
+* 🔀 Train-Test Split: **80:20**
+* 📏 Evaluation Metrics:
+
+  * Accuracy
+  * Confusion Matrix
+  * Classification Report
+
+---
+
+## 📉 Model Evaluation
+
+| Model                    | Training Accuracy | Testing Accuracy |
+| ------------------------ | ----------------- | ---------------- |
+| Decision Tree            | 100%              | 71.4%            |
+| GridSearchCV Tuned       | 84.2%             | 72.1%            |
+| RandomizedSearchCV Tuned | 84.2%             | 72.7%            |
+| Cost Complexity Pruning  | 77.0%             | 77.2%            |
+
+---
+
+## ⚠️ Overfitting Issue
+
+Initially, the model showed:
+
+* Training Accuracy: **72%**
+* Testing Accuracy: **1%**
+
+👉 This indicated **overfitting**.
+
+### ✅ Solution
+
+* Applied **Hyperparameter Tuning**
+* Used **GridSearchCV & RandomizedSearchCV**
+* Applied **Cost Complexity Pruning**
+
+---
+
+## 🏆 Final Result
+
+* ✅ Best Testing Accuracy: **77.2%**
+* 📈 Improved Generalization
+* 🔍 Reduced Overfitting
+
+---
+
+## 🚀 Technologies Used
+
+* Python
+* Pandas
+* NumPy
+* Scikit-learn
+* Seaborn
+* Matplotlib
+* Streamlit
+
+---
+
+## 🌐 Live Demo
+
+🔗 https://dibitiesclassification-rkxhhaufqpw4t46iyzunc6.streamlit.app/
+
+---
+
+## 📂 Project Structure
+
+```
+diabetes_prediction/
+│
+├── app.py
+├── model.pkl
+├── diabetes.csv
+├── requirements.txt
+└── README.md
+```
+
+---
+
+## ▶️ How to Run Locally
+
+```bash
+# Clone the repository
+git clone https://github.com/your-username/diabetes-prediction.git
+
+# Go to project folder
+cd diabetes-prediction
+
+# Install dependencies
+pip install -r requirements.txt
+
+# Run app
+streamlit run app.py
+```
+
+---
+
+## 📌 Future Improvements
+
+* 🔥 Add more ML models (Random Forest, XGBoost)
+* 📊 Add visualization dashboard
+* 🌍 Deploy with advanced UI
+* 📱 Mobile responsive UI
+
+---
+
+## 👨‍💻 Author
+
+**Amol Satpute**
+
+---
+
+## ⭐ If you like this project
+
+Give it a ⭐ on GitHub and share it!
